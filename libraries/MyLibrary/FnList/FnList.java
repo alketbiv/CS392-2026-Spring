@@ -1,4 +1,4 @@
-package Library00.FnList;
+package MyLibrary.FnList;
 
 public class FnList<T> {
 //
