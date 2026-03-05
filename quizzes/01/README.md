@@ -9,14 +9,14 @@ class but you are not allowed to add PUBLIC methods
 The following files are given in Code:
 
 ```
-LnList.java
+LnList.java // This one should not be modified!
 Quiz01_00.java
 Quiz01_01.java
 Quiz01_02.java
 Quiz01_03.java
 Quiz01_04.java
 Quiz01_05.java
-Quiz01_05_test.java // for testing Quiz01_05
+Quiz01_05_test.java // for testing Quiz01_05.java
 ```
 
 Please copy them to MySolution, and you should not add
