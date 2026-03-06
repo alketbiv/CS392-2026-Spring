@@ -1,6 +1,6 @@
-package Library00.FnStrn;
+package MyLibrary.FnStrn;
 
-import Library00.FnStrn.*;
+import MyLibrary.FnStrn.*;
 
 import java.util.function.Consumer;
 import java.util.function.Predicate;

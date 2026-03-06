@@ -1,4 +1,4 @@
-package Library00.FnStrn;
+package MyLibrary.FnStrn;
 
 public class FnStrn {
 
