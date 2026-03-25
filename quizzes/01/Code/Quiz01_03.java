@@ -1,7 +1,7 @@
-import java.util.Arrays;
 import java.lang.reflect.Array;
 
 public class Quiz01_03 {
+
     public static
     <T extends Comparable<T>>
     T[] sort20WithNoRecursion
@@ -15,23 +15,26 @@ public class Quiz01_03 {
         res[10] = x10; res[11] = x11; res[12] = x12; res[13] = x13; res[14] = x14;
         res[15] = x15; res[16] = x16; res[17] = x17; res[18] = x18; res[19] = x19;
 
-        Arrays.sort(res);
+        // simple bubble sort (no recursion)
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 19 - i; j++) {
+                if (res[j].compareTo(res[j + 1]) > 0) {
+                    T temp = res[j];
+                    res[j] = res[j + 1];
+                    res[j + 1] = temp;
+                }
+            }
+        }
+
         return res;
     }
-
-    public static void main (String[] args) {
-        Integer[] A1 =
-            sort20WithNoRecursion
-            (9, 3, 7, 1, 8, 2, 6, 5, 4, 0,
-             19, 13, 17, 11, 18, 12, 16, 15, 14, 10);
-
-        System.out.println(Arrays.toString(A1));
-
-        String[] A2 =
-            sort20WithNoRecursion
-            ("k", "d", "q", "a", "m", "b", "z", "c", "x", "e",
-             "t", "g", "p", "f", "r", "h", "n", "i", "y", "j");
-
-        System.out.println(Arrays.toString(A2));
-    }
 }
+
+/*
+Time Complexity:
+Bubble sort runs in O(n^2).
+Since n = 20 (constant), it is effectively O(1).
+
+Space Complexity:
+O(1)
+*/

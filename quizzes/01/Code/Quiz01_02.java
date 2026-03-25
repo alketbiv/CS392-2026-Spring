@@ -1,15 +1,7 @@
-import java.util.HashMap;
-
 public class Quiz01_02 {
 
     public static boolean solve_3prod(Integer[] A) {
         int n = A.length;
-
-        HashMap<Integer, Integer> freq = new HashMap<Integer, Integer>();
-        for (int i = 0; i < n; i += 1) {
-            int x = A[i];
-            freq.put(x, freq.getOrDefault(x, 0) + 1);
-        }
 
         for (int i = 0; i < n; i += 1) {
             for (int j = i + 1; j < n; j += 1) {
@@ -21,16 +13,10 @@ public class Quiz01_02 {
 
                 int prod = (int) prodLong;
 
-                if (!freq.containsKey(prod)) {
-                    continue;
-                }
-
-                int need = 1;
-                if (A[i].intValue() == prod) need += 1;
-                if (A[j].intValue() == prod) need += 1;
-
-                if (freq.get(prod) >= need) {
-                    return true;
+                for (int k = 0; k < n; k += 1) {
+                    if (k != i && k != j && A[k].intValue() == prod) {
+                        return true;
+                    }
                 }
             }
         }
