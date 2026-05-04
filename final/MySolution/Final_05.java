@@ -4,14 +4,12 @@
 
 import MyLibrary.LnList.*;
 import MyLibrary.MyPQueue.*;
-import java.util.Comparator;
 import java.util.function.ToIntBiFunction;
 
 public class Final_05 {
 
     public static<T> LnList<T>
     LnList_n$way$merge(LnList<T> xss[], ToIntBiFunction<T,T> cmp) {
-        // put all non-empty lists into a priority queue
         MyPQueueArray<int[]> pq = new MyPQueueArray<int[]>(
             xss.length,
             (a, b) -> cmp.applyAsInt((T)xss[a[0]].hd1(), (T)xss[b[0]].hd1())

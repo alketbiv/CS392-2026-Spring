@@ -75,16 +75,11 @@ public class Final_03 {
             else map.insert$opt(key, count + 1);
             node = node.tl().eval0();
         }
-        FnList<FnTupl2<FnList<Character>, Integer>> WNS = FnListSUtil.nil();
-        map.foritm((k, v) -> {
-            // WNS is effectively final workaround not needed since we use array
-        });
         final FnList<FnTupl2<FnList<Character>, Integer>>[] acc = new FnList[]{FnListSUtil.nil()};
         map.foritm((k, v) -> {
             acc[0] = FnListSUtil.cons(new FnTupl2<>(stringToWord(k), v), acc[0]);
         });
-        WNS = acc[0];
-        return mergeSort(WNS, (p1, p2) -> {
+        return mergeSort(acc[0], (p1, p2) -> {
             int n1 = p1.sub1, n2 = p2.sub1;
             if (n1 > n2) return -1;
             if (n1 < n2) return 1;
