@@ -53,41 +53,5 @@ public class Assign06_01 {
         A[i] = A[j];
         A[j] = temp;
     }
-public static void main(String[] args) {
-    ToIntBiFunction<Integer,Integer> cmp = (x, y) -> Integer.compare(x, y);
 
-    Integer[] A1 = {5, 3, 8, 1, 2, 7, 4, 6};
-    arrayQuickSort(A1, cmp);
-    System.out.println(isSorted(A1, cmp)); // should print true
-
-    Integer[] A2 = {1, 2, 3, 4, 5};
-    arrayQuickSort(A2, cmp);
-    System.out.println(isSorted(A2, cmp)); // should print true
-
-    Integer[] A3 = {3, 5, 3, 3, 2, 8, 5, 2, 1};
-    arrayQuickSort(A3, cmp);
-    System.out.println(isSorted(A3, cmp)); // should print true
-
-    Integer[] A4 = new Integer[1000000];
-    for (int i = 0; i < A4.length; i++) A4[i] = 0;
-    arrayQuickSort(A4, cmp);
-    System.out.println(isSorted(A4, cmp)); // should print true
-
-    Integer[] A5 = {};
-    arrayQuickSort(A5, cmp);
-    System.out.println(isSorted(A5, cmp)); // should print true
-
-    Integer[] A6 = {42};
-    arrayQuickSort(A6, cmp);
-    System.out.println(isSorted(A6, cmp)); // should print true
-}
-
-public static <T> boolean isSorted(T[] A, ToIntBiFunction<T,T> cmp) {
-    for (int i = 1; i < A.length; i++) {
-        if (cmp.applyAsInt(A[i - 1], A[i]) > 0) {
-            return false;
-        }
-    }
-    return true;
-}
 } // end of [public class Assign06_01{...}]
